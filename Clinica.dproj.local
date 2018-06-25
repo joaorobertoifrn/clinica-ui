@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2018/06/18 20:10:46.000.769,=C:\Users\joao_\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2018/06/18 20:11:24.000.395,C:\Users\joao_\Projetos\Clinica-ui\frm_Principal.dfm=C:\Users\joao_\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit1.dfm</Transaction>
+    <Transaction>2018/06/18 20:11:24.000.395,C:\Users\joao_\Projetos\Clinica-ui\frm_Principal.pas=C:\Users\joao_\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2018/06/18 20:11:32.000.770,C:\Users\joao_\Projetos\Clinica-ui\Clinica.dproj=C:\Users\joao_\OneDrive\Documentos\Embarcadero\Studio\Projects\Project1.dproj</Transaction>
+    <Transaction>2018/06/18 21:05:29.000.445,=C:\Users\joao_\Projetos\Clinica-ui\ABOUT.pas</Transaction>
+    <Transaction>2018/06/18 21:06:08.000.407,C:\Users\joao_\Projetos\Clinica-ui\frm_Sobre.pas=C:\Users\joao_\Projetos\Clinica-ui\ABOUT.pas</Transaction>
+    <Transaction>2018/06/18 21:06:08.000.407,C:\Users\joao_\Projetos\Clinica-ui\frm_Sobre.dfm=C:\Users\joao_\Projetos\Clinica-ui\ABOUT.dfm</Transaction>
+    <Transaction>2018/06/18 21:27:42.000.411,=C:\Users\joao_\Projetos\Clinica-ui\Sair_u.pas</Transaction>
+    <Transaction>2018/06/18 21:27:54.000.695,C:\Users\joao_\Projetos\Clinica-ui\Sair_u.dfm=C:\Users\joao_\Projetos\Clinica-ui\frm_Sair.dfm</Transaction>
+    <Transaction>2018/06/18 21:27:54.000.695,C:\Users\joao_\Projetos\Clinica-ui\Sair_u.pas=C:\Users\joao_\Projetos\Clinica-ui\frm_Sair.pas</Transaction>
+    <Transaction>2018/06/22 22:18:15.229,=C:\Users\joao_\Projetos\Clinica-ui\Unit1.pas</Transaction>
+    <Transaction>2018/06/22 22:31:15.445,C:\Users\joao_\Projetos\Clinica-ui\frm_DataModule.pas=C:\Users\joao_\Projetos\Clinica-ui\Unit1.pas</Transaction>
+    <Transaction>2018/06/22 22:31:15.445,C:\Users\joao_\Projetos\Clinica-ui\frm_DataModule.dfm=C:\Users\joao_\Projetos\Clinica-ui\Unit1.dfm</Transaction>
+  </Transactions>
+</BorlandProject>

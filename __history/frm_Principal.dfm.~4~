@@ -1,0 +1,33 @@
+object F_Principal: TF_Principal
+  Left = 0
+  Top = 0
+  Caption = 'Projeto - Clinica'
+  ClientHeight = 453
+  ClientWidth = 775
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  Menu = MainMenu1
+  OldCreateOrder = False
+  Position = poScreenCenter
+  WindowState = wsMaximized
+  PixelsPerInch = 96
+  TextHeight = 13
+  object StatusBar1: TStatusBar
+    Left = 0
+    Top = 434
+    Width = 775
+    Height = 19
+    Panels = <>
+    ExplicitLeft = 304
+    ExplicitTop = 160
+    ExplicitWidth = 0
+  end
+  object MainMenu1: TMainMenu
+    Left = 88
+    Top = 64
+  end
+end

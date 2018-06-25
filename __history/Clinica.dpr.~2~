@@ -1,0 +1,14 @@
+program Clinica;
+
+uses
+  Vcl.Forms,
+  frm_Principal in 'frm_Principal.pas' {F_Principal};
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.MainFormOnTaskbar := True;
+  Application.CreateForm(TF_Principal, F_Principal);
+  Application.Run;
+end.
