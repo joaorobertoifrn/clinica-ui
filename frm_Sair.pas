@@ -14,10 +14,10 @@ type
     Label1: TLabel;
     Image1: TImage;
     Panel3: TPanel;
-    BitBtn1: TBitBtn;
-    BitBtn2: TBitBtn;
-    procedure BitBtn1Click(Sender: TObject);
-    procedure FormClose(Sender: TObject; var Action: TCloseAction);
+    btn_Sair: TBitBtn;
+    btn_Cancelar: TBitBtn;
+    procedure btn_SairClick(Sender: TObject);
+    procedure btn_CancelarClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -31,14 +31,14 @@ implementation
 
 {$R *.dfm}
 
-procedure TF_Sair.BitBtn1Click(Sender: TObject);
+procedure TF_Sair.btn_CancelarClick(Sender: TObject);
 begin
-  Application.Terminate;
+  F_Sair.Close;
 end;
 
-procedure TF_Sair.FormClose(Sender: TObject; var Action: TCloseAction);
+procedure TF_Sair.btn_SairClick(Sender: TObject);
 begin
-  Action := cafree;
+  Application.Terminate;
 end;
 
 end.

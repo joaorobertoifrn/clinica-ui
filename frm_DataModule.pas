@@ -7,14 +7,6 @@ uses
 
 type
   TBancoDados = class(TDataModule)
-    Conexao: TADOConnection;
-    qry_Usuario: TADOQuery;
-    qry_Usuarioid: TAutoIncField;
-    qry_Usuariocpf_ou_cnpj: TStringField;
-    qry_Usuarioemail: TStringField;
-    qry_Usuarionome: TStringField;
-    qry_Usuariosenha: TStringField;
-    qry_Usuariotipo: TIntegerField;
   private
     { Private declarations }
   public

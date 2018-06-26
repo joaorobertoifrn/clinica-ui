@@ -5,7 +5,8 @@ interface
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.ComCtrls, Vcl.Menus, System.Actions,
-  Vcl.ActnList, System.ImageList, Vcl.ImgList, Vcl.Imaging.jpeg, Vcl.ExtCtrls;
+  Vcl.ActnList, System.ImageList, Vcl.ImgList, Vcl.Imaging.jpeg, Vcl.ExtCtrls,
+  U_Autenticacao;
 
 type
   TF_Principal = class(TForm)
@@ -47,6 +48,9 @@ type
     Image1: TImage;
     procedure act_SobreExecute(Sender: TObject);
     procedure act_SairExecute(Sender: TObject);
+    procedure act_CadPacienteExecute(Sender: TObject);
+    procedure FormClose(Sender: TObject; var Action: TCloseAction);
+    procedure FormCreate(Sender: TObject);
   private
     { Private declarations }
   public
@@ -55,12 +59,23 @@ type
 
 var
   F_Principal: TF_Principal;
+  Auth : TAutenticacao;
 
 implementation
 
 {$R *.dfm}
 
-uses frm_Sobre, frm_Sair;
+uses frm_Sobre, frm_Sair, frm_Paciente, frm_Login ;
+
+procedure TF_Principal.act_CadPacienteExecute(Sender: TObject);
+begin
+  F_Paciente := TF_Paciente.Create(Application);
+  try
+    F_Paciente.ShowModal;
+  finally
+    FreeAndNil(F_Paciente);
+  end;
+end;
 
 procedure TF_Principal.act_SairExecute(Sender: TObject);
 begin
@@ -82,4 +97,22 @@ begin
   end;
 end;
 
+procedure TF_Principal.FormClose(Sender: TObject; var Action: TCloseAction);
+begin
+  act_Sair.Execute;
+end;
+
+procedure TF_Principal.FormCreate(Sender: TObject);
+begin
+  Auth := TAutenticacao.Create;
+  F_Login := TF_Login.Create(Application);
+  try
+    F_Login.ShowModal;
+    ShowMessage(Auth.token);
+  finally
+    F_Login.Free;
+  end;
+end;
+
 end.
+

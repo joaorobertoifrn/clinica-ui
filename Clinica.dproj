@@ -5,7 +5,7 @@
         <FrameworkType>VCL</FrameworkType>
         <MainSource>Clinica.dpr</MainSource>
         <Base>True</Base>
-        <Config Condition="'$(Config)'==''">Release</Config>
+        <Config Condition="'$(Config)'==''">Debug</Config>
         <Platform Condition="'$(Platform)'==''">Win32</Platform>
         <TargetedPlatforms>1</TargetedPlatforms>
         <AppType>Application</AppType>
@@ -59,7 +59,7 @@
         <UWP_DelphiLogo44>$(BDS)\bin\Artwork\Windows\UWP\delphi_UwpDefault_44.png</UWP_DelphiLogo44>
         <UWP_DelphiLogo150>$(BDS)\bin\Artwork\Windows\UWP\delphi_UwpDefault_150.png</UWP_DelphiLogo150>
         <SanitizedProjectName>Clinica</SanitizedProjectName>
-        <Custom_Styles>&quot;Aqua Light Slate|VCLSTYLE|$(BDSCOMMONDIR)\Styles\AquaLightSlate.vsf&quot;</Custom_Styles>
+        <Custom_Styles>&quot;Iceberg Classico|VCLSTYLE|$(BDSCOMMONDIR)\Styles\IcebergClassico.vsf&quot;</Custom_Styles>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base_Win32)'!=''">
         <DCC_UsePackage>DBXSqliteDriver;DataSnapServerMidas;DBXDb2Driver;DBXInterBaseDriver;vclactnband;ACBr_TEFD;vclFireDAC;DataSnapFireDAC;svnui;tethering;FireDACADSDriver;DBXMSSQLDriver;DatasnapConnectorsFreePascal;FireDACMSSQLDriver;vcltouch;vcldb;bindcompfmx;svn;Intraweb;DBXOracleDriver;inetdb;ACBr_Diversos;ACBr_TXTComum;FmxTeeUI;emsedge;fmx;fmxdae;vclib;ACBr_Ponto;FireDACDBXDriver;dbexpress;IndyCore;vclx;dsnap;DataSnapCommon;ACBr_PCNComum;DataSnapConnectors;ACBR_DeSTDA;VCLRESTComponents;vclie;bindengine;DBXMySQLDriver;FireDACOracleDriver;FireDACMySQLDriver;DBXFirebirdDriver;ACBr_PAF;ACBr_Sintegra;FireDACCommonODBC;DataSnapClient;bindcompdbx;IndyIPCommon;ACBr_TCP;vcl;DBXSybaseASEDriver;IndyIPServer;IndySystem;FireDACDb2Driver;dsnapcon;ACBr_synapse;FireDACMSAccDriver;fmxFireDAC;FireDACInfxDriver;vclimg;ACBr_SPEDImportar;TeeDB;ACBr_SPED;emshosting;ACBr_Comum;FireDACPgDriver;ibmonitor;FireDACASADriver;ACBr_LFD;DBXOdbcDriver;FireDACTDataDriver;FMXTee;DbxCommonDriver;ibxpress;Tee;DataSnapServer;xmlrtl;DataSnapNativeClient;fmxobj;vclwinx;ibxbindings;rtl;FireDACDSDriver;DbxClientDriver;ACBr_OpenSSL;DBXSybaseASADriver;CustomIPTransport;vcldsnap;ACBr_Convenio115;bindcomp;appanalytics;ACBr_Serial;DBXInformixDriver;IndyIPClient;frce;bindcompvcl;TeeUI;dbxcds;VclSmp;adortl;FireDACODBCDriver;DataSnapIndy10ServerTransport;ACBr_Boleto;dsnapxml;DataSnapProviderClient;dbrtl;inetdbxpress;FireDACMongoDBDriver;IndyProtocols;ACBr_SEF2;ACBr_MTER;fmxase;$(DCC_UsePackage)</DCC_UsePackage>
@@ -120,6 +120,19 @@
             <FormType>dfm</FormType>
             <DesignClass>TDataModule</DesignClass>
         </DCCReference>
+        <DCCReference Include="frm_Padrao.pas">
+            <Form>F_Padrao</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="frm_Paciente.pas">
+            <Form>F_Paciente</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="frm_Login.pas">
+            <Form>F_Login</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="U_Autenticacao.pas"/>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>
@@ -141,21 +154,10 @@
                     <Source Name="MainSource">Clinica.dpr</Source>
                 </Source>
                 <Excluded_Packages>
-                    <Excluded_Packages Name="C:\Users\Public\Documents\Embarcadero\Studio\19.0\Bpl\ACBr_OpenSSL.bpl">ACBr - OpenSSL através do LibXMLSec - (http://www.projetoacbr.com.br/)</Excluded_Packages>
+                    <Excluded_Packages Name="$(BDSBIN)\bcboffice2k250.bpl">Embarcadero C++Builder Office 2000 Servers Package</Excluded_Packages>
+                    <Excluded_Packages Name="$(BDSBIN)\bcbofficexp250.bpl">Embarcadero C++Builder Office XP Servers Package</Excluded_Packages>
                     <Excluded_Packages Name="$(BDSBIN)\dcloffice2k250.bpl">Microsoft Office 2000 Sample Automation Server Wrapper Components</Excluded_Packages>
                     <Excluded_Packages Name="$(BDSBIN)\dclofficexp250.bpl">Microsoft Office XP Sample Automation Server Wrapper Components</Excluded_Packages>
-                    <Excluded_Packages Name="C:\Users\joao_\Projetos\Componente\ACBr\Lib\Delphi\LibD25\ACBr_NFe.bpl">ACBr - Nota Fiscal Eletrônica - (http://www.projetoacbr.com.br/)</Excluded_Packages>
-                    <Excluded_Packages Name="C:\Users\joao_\Projetos\Componente\ACBr\Lib\Delphi\LibD25\ACBr_NFCeECFVirtual.bpl">ACBr - Implementação ECF Virtual NFCe. Permite usar ACBrECF para emitir NFCe como se fosse um ECF</Excluded_Packages>
-                    <Excluded_Packages Name="C:\Users\joao_\Projetos\Componente\ACBr\Lib\Delphi\LibD25\ACBr_NFeDanfeESCPOS.bpl">ACBr - DANFe para NFC-e Impressora Serial - (http://www.projetoacbr.com.br/)</Excluded_Packages>
-                    <Excluded_Packages Name="C:\Users\joao_\Projetos\Componente\ACBr\Lib\Delphi\LibD25\ACBr_CTe.bpl">ACBr - Conhecimento de Transporte Eletrônico - (http://www.projetoacbr.com.br/)</Excluded_Packages>
-                    <Excluded_Packages Name="C:\Users\joao_\Projetos\Componente\ACBr\Lib\Delphi\LibD25\ACBr_NFSe.bpl">ACBr - Nota Fiscal de Serviço Eletrônica - (http://www.projetoacbr.com.br/)</Excluded_Packages>
-                    <Excluded_Packages Name="C:\Users\joao_\Projetos\Componente\ACBr\Lib\Delphi\LibD25\ACBr_MDFe.bpl">ACBr - Manifesto de Documentos Fiscais Eletrônico - (http://www.projetoacbr.com.br/)</Excluded_Packages>
-                    <Excluded_Packages Name="C:\Users\joao_\Projetos\Componente\ACBr\Lib\Delphi\LibD25\ACBr_GNRE.bpl">ACBr - Guia Nacional de Recolhimento de Tributos Estaduais - (http://www.projetoacbr.com.br/)</Excluded_Packages>
-                    <Excluded_Packages Name="C:\Users\joao_\Projetos\Componente\ACBr\Lib\Delphi\LibD25\ACBr_SAT.bpl">ACBr - Cupom Fiscal Eletrônico SAT - (http://www.projetoacbr.com.br/)</Excluded_Packages>
-                    <Excluded_Packages Name="C:\Users\joao_\Projetos\Componente\ACBr\Lib\Delphi\LibD25\ACBr_SATECFVirtual.bpl">ACBr - Implementação de ECF Virtual para o SAT. Permite usar ACBrECF para comandar o SAT como se fosse um ECF</Excluded_Packages>
-                    <Excluded_Packages Name="C:\Users\joao_\Projetos\Componente\ACBr\Lib\Delphi\LibD25\ACBr_SATExtratoESCPOS.bpl">ACBr - Extrato Cupom Fiscal Eletrônico SAT para Serial - (http://www.projectoacbr.com.br/)</Excluded_Packages>
-                    <Excluded_Packages Name="C:\Users\joao_\Projetos\Componente\ACBr\Lib\Delphi\LibD25\ACBr_BlocoX.bpl">ACBr - Bloco X - (http://www.projetoacbr.com.br/)</Excluded_Packages>
-                    <Excluded_Packages Name="C:\Users\joao_\Projetos\Componente\ACBr\Lib\Delphi\LibD25\ACBr_SATWS.bpl">ACBrSATWS - Consulta de lotes enviados de CF-e-SAT - (http://www.projetoacbr.com.br/)</Excluded_Packages>
                 </Excluded_Packages>
             </Delphi.Personality>
             <Deployment Version="3">

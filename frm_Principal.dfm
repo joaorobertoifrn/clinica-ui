@@ -14,6 +14,8 @@ object F_Principal: TF_Principal
   OldCreateOrder = False
   Position = poScreenCenter
   WindowState = wsMaximized
+  OnClose = FormClose
+  OnCreate = FormCreate
   PixelsPerInch = 96
   TextHeight = 13
   object Image1: TImage
@@ -27068,6 +27070,7 @@ object F_Principal: TF_Principal
       Category = 'Cadastro'
       Caption = 'Paciente'
       ImageIndex = 3
+      OnExecute = act_CadPacienteExecute
     end
     object act_CadProfissional: TAction
       Category = 'Cadastro'
@@ -27132,7 +27135,7 @@ object F_Principal: TF_Principal
     Left = 88
     Top = 176
     Bitmap = {
-      494C0101070030003C0020002000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C010107003000480020002000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000800000004000000001002000000000000080
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000020000

@@ -1,0 +1,58 @@
+unit frm_Login;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, IPPeerClient, Vcl.StdCtrls, REST.Client,
+  REST.Authenticator.Basic, Data.Bind.Components, Data.Bind.ObjectScope;
+
+type
+  TF_Login = class(TForm)
+    edt_Email: TEdit;
+    edt_Senha: TEdit;
+    Button1: TButton;
+    Label1: TLabel;
+    Label2: TLabel;
+    Button2: TButton;
+    RESTClient1: TRESTClient;
+    RESTRequest1: TRESTRequest;
+    RESTResponse1: TRESTResponse;
+    procedure Button2Click(Sender: TObject);
+    procedure Button1Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  F_Login: TF_Login;
+
+implementation
+
+{$R *.dfm}
+
+procedure TF_Login.Button1Click(Sender: TObject);
+begin
+  RESTRequest1.Body.Add('email='+edt_Email.Text);
+  RESTRequest1.Body.Add('senha='+edt_Senha.Text);
+  RESTRequest1.Execute;
+  if RESTResponse1.Content.IsEmpty then
+  begin
+    ShowMessage('Falha no login');
+  end
+  else
+  begin
+    ShowMessage(RESTResponse1.Headers.Values['Authorization']);
+  end;
+
+
+end;
+
+procedure TF_Login.Button2Click(Sender: TObject);
+begin
+  Application.Terminate;
+end;
+
+end.

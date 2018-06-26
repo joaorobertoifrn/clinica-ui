@@ -1,0 +1,37 @@
+object BancoDados: TBancoDados
+  OldCreateOrder = False
+  Height = 150
+  Width = 215
+  object Conexao: TADOConnection
+    Connected = True
+    ConnectionString = 
+      'Provider=SQLNCLI11.1;Persist Security Info=False;User ID=sa;Init' +
+      'ial Catalog=agenda-medica-ifrn-db;Data Source=(local);Initial Fi' +
+      'le Name="";Server SPN=""'
+    Provider = 'SQLNCLI11.1'
+    Left = 112
+    Top = 48
+  end
+  object qry_Paciente: TADOQuery
+    Connection = Conexao
+    CursorType = ctStatic
+    Parameters = <>
+    SQL.Strings = (
+      'Select * From paciente')
+    Left = 32
+    Top = 48
+    object qry_Pacientetokenfcm: TStringField
+      FieldName = 'tokenfcm'
+      Size = 255
+    end
+    object qry_Pacienteusaapp: TBooleanField
+      FieldName = 'usaapp'
+    end
+    object qry_Pacienteid: TLargeintField
+      FieldName = 'id'
+    end
+    object qry_Pacienteconvenio_id: TLargeintField
+      FieldName = 'convenio_id'
+    end
+  end
+end

@@ -1,0 +1,31 @@
+unit frm_DataModule;
+
+interface
+
+uses
+  System.SysUtils, System.Classes, Data.DB, Data.Win.ADODB;
+
+type
+  TBancoDados = class(TDataModule)
+    Conexao: TADOConnection;
+    qry_Paciente: TADOQuery;
+    qry_Pacientetokenfcm: TStringField;
+    qry_Pacienteusaapp: TBooleanField;
+    qry_Pacienteid: TLargeintField;
+    qry_Pacienteconvenio_id: TLargeintField;
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  BancoDados: TBancoDados;
+
+implementation
+
+{%CLASSGROUP 'Vcl.Controls.TControl'}
+
+{$R *.dfm}
+
+end.

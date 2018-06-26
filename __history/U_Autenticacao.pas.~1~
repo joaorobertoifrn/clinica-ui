@@ -1,0 +1,34 @@
+unit U_Autenticacao;
+
+
+interface
+
+type
+  TAutenticacao = class
+  private
+    Femail: String;
+    Fsenha: String;
+    procedure Setemail(const Value: String);
+    procedure Setsenha(const Value: String);
+  published
+
+  property email : String read Femail write Setemail;
+  property senha : String read Fsenha write Setsenha;
+
+  end;
+
+implementation
+
+{ TAutenticacao }
+
+procedure TAutenticacao.Setemail(const Value: String);
+begin
+  Femail := Value;
+end;
+
+procedure TAutenticacao.Setsenha(const Value: String);
+begin
+  Fsenha := Value;
+end;
+
+end.
