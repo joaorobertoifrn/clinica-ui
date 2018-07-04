@@ -18,45 +18,50 @@ inherited F_Convenio: TF_Convenio
         end
       end
       inherited Tab_Cadastro: TTabSheet
-        object edt_periodoRetorno: TLabeledEdit [0]
-          Left = 482
-          Top = 208
-          Width = 121
-          Height = 21
-          EditLabel.Width = 93
-          EditLabel.Height = 13
-          EditLabel.Caption = 'Per'#237'odo do Retorno'
-          TabOrder = 8
-        end
-        object edt_telefone: TLabeledEdit [1]
-          Left = 320
-          Top = 208
-          Width = 137
-          Height = 21
-          EditLabel.Width = 42
-          EditLabel.Height = 13
-          EditLabel.Caption = 'Telefone'
-          TabOrder = 7
-        end
-        object edt_codigoCNS: TLabeledEdit [2]
-          Left = 176
-          Top = 208
-          Width = 121
-          Height = 21
-          EditLabel.Width = 56
-          EditLabel.Height = 13
-          EditLabel.Caption = 'C'#243'digo CNS'
-          TabOrder = 6
-        end
-        object edt_registroANS: TLabeledEdit [3]
+        ExplicitLeft = 4
+        ExplicitTop = 24
+        ExplicitWidth = 625
+        ExplicitHeight = 335
+        object edt_id: TLabeledEdit [0]
           Left = 24
-          Top = 208
+          Top = 61
+          Width = 121
+          Height = 21
+          EditLabel.Width = 11
+          EditLabel.Height = 13
+          EditLabel.Caption = 'ID'
+          TabOrder = 0
+        end
+        object edt_nome: TLabeledEdit [1]
+          Left = 24
+          Top = 109
+          Width = 313
+          Height = 21
+          AutoSize = False
+          EditLabel.Width = 27
+          EditLabel.Height = 13
+          EditLabel.Caption = 'Nome'
+          TabOrder = 1
+        end
+        object edt_email: TLabeledEdit [2]
+          Left = 352
+          Top = 109
+          Width = 251
+          Height = 21
+          EditLabel.Width = 24
+          EditLabel.Height = 13
+          EditLabel.Caption = 'Email'
+          TabOrder = 2
+        end
+        object edt_cnpj: TLabeledEdit [3]
+          Left = 24
+          Top = 160
           Width = 137
           Height = 21
-          EditLabel.Width = 63
+          EditLabel.Width = 25
           EditLabel.Height = 13
-          EditLabel.Caption = 'Registro ANS'
-          TabOrder = 5
+          EditLabel.Caption = 'CNPJ'
+          TabOrder = 3
         end
         object edt_razaoSocial: TLabeledEdit [4]
           Left = 176
@@ -68,46 +73,45 @@ inherited F_Convenio: TF_Convenio
           EditLabel.Caption = 'Raz'#227'o Social'
           TabOrder = 4
         end
-        object edt_cnpj: TLabeledEdit [5]
+        object edt_registroANS: TLabeledEdit [5]
           Left = 24
-          Top = 160
+          Top = 208
           Width = 137
           Height = 21
-          EditLabel.Width = 25
+          EditLabel.Width = 63
           EditLabel.Height = 13
-          EditLabel.Caption = 'CNPJ'
-          TabOrder = 3
+          EditLabel.Caption = 'Registro ANS'
+          TabOrder = 5
         end
-        object edt_email: TLabeledEdit [6]
-          Left = 352
-          Top = 109
-          Width = 251
-          Height = 21
-          EditLabel.Width = 24
-          EditLabel.Height = 13
-          EditLabel.Caption = 'Email'
-          TabOrder = 2
-        end
-        object edt_nome: TLabeledEdit [7]
-          Left = 24
-          Top = 109
-          Width = 313
-          Height = 21
-          AutoSize = False
-          EditLabel.Width = 27
-          EditLabel.Height = 13
-          EditLabel.Caption = 'Nome'
-          TabOrder = 1
-        end
-        object edt_id: TLabeledEdit [8]
-          Left = 24
-          Top = 61
+        object edt_codigoCNS: TLabeledEdit [6]
+          Left = 176
+          Top = 208
           Width = 121
           Height = 21
-          EditLabel.Width = 11
+          EditLabel.Width = 56
           EditLabel.Height = 13
-          EditLabel.Caption = 'ID'
-          TabOrder = 0
+          EditLabel.Caption = 'C'#243'digo CNS'
+          TabOrder = 6
+        end
+        object edt_telefone: TLabeledEdit [7]
+          Left = 320
+          Top = 208
+          Width = 137
+          Height = 21
+          EditLabel.Width = 42
+          EditLabel.Height = 13
+          EditLabel.Caption = 'Telefone'
+          TabOrder = 7
+        end
+        object edt_periodoRetorno: TLabeledEdit [8]
+          Left = 482
+          Top = 208
+          Width = 121
+          Height = 21
+          EditLabel.Width = 93
+          EditLabel.Height = 13
+          EditLabel.Caption = 'Per'#237'odo do Retorno'
+          TabOrder = 8
         end
         inherited btn_salvar: TButton
           TabOrder = 9
@@ -129,6 +133,9 @@ inherited F_Convenio: TF_Convenio
       Caption = 'Listar'
       OnExecute = exec_ListarExecute
     end
+    object exec_FindByID: TAction
+      Caption = 'exec_FindByID'
+    end
   end
   inherited DataSource1: TDataSource
     DataSet = Tab_Convenio
@@ -142,7 +149,7 @@ inherited F_Convenio: TF_Convenio
     Params = <>
     HandleRedirects = True
     RaiseExceptionOn500 = False
-    Left = 32
+    Left = 56
     Top = 296
   end
   object RESTRequestListar: TRESTRequest
@@ -150,18 +157,18 @@ inherited F_Convenio: TF_Convenio
     Params = <>
     Response = RESTResponseListar
     SynchronizedEvents = False
-    Left = 120
+    Left = 168
     Top = 296
   end
   object RESTResponseListar: TRESTResponse
-    Left = 224
+    Left = 288
     Top = 296
   end
   object RESTResponseDataSetAdapter1: TRESTResponseDataSetAdapter
     Dataset = Tab_Convenio
     FieldDefs = <>
     Response = RESTResponseListar
-    Left = 360
+    Left = 424
     Top = 296
   end
   object Tab_Convenio: TFDMemTable
@@ -174,7 +181,7 @@ inherited F_Convenio: TF_Convenio
     UpdateOptions.AssignedValues = [uvCheckRequired]
     UpdateOptions.CheckRequired = False
     StoreDefs = True
-    Left = 488
+    Left = 552
     Top = 296
     object Tab_Convenioid: TWideStringField
       DisplayLabel = 'ID'
@@ -246,7 +253,7 @@ inherited F_Convenio: TF_Convenio
     Params = <>
     HandleRedirects = True
     RaiseExceptionOn500 = False
-    Left = 32
+    Left = 56
     Top = 352
   end
   object RESTRequestSalvar: TRESTRequest
@@ -274,39 +281,40 @@ inherited F_Convenio: TF_Convenio
       end>
     Response = RESTResponseSalvar
     SynchronizedEvents = False
-    Left = 120
+    Left = 168
     Top = 352
   end
   object RESTResponseSalvar: TRESTResponse
     ContentType = 'text/html'
-    Left = 224
+    Left = 288
     Top = 352
   end
-  object RESTClientByID: TRESTClient
+  object RESTClientFindByID: TRESTClient
     Accept = 'application/json, text/plain; q=0.9, text/html;q=0.8,'
     AcceptCharset = 'UTF-8, *;q=0.8'
-    BaseURL = 'http://clinicaifrn.herokuapp.com/convenio/1'
+    BaseURL = 'http://clinicaifrn.herokuapp.com'
     Params = <>
     HandleRedirects = True
     RaiseExceptionOn500 = False
-    Left = 32
+    Left = 56
     Top = 240
   end
-  object RESTRequestByID: TRESTRequest
-    Client = RESTClientByID
+  object RESTRequestFindByID: TRESTRequest
+    Client = RESTClientFindByID
     Params = <
       item
         Kind = pkURLSEGMENT
-        name = '/{id}'
+        name = 'id_convenio'
+        Options = [poAutoCreated]
       end>
-    Response = RESTResponseByID
+    Resource = 'convenio/{id_convenio}'
+    Response = RESTResponseFindByID
     SynchronizedEvents = False
-    Left = 120
+    Left = 168
     Top = 240
   end
-  object RESTResponseByID: TRESTResponse
-    ContentType = 'application/json'
-    Left = 224
+  object RESTResponseFindByID: TRESTResponse
+    Left = 288
     Top = 240
   end
 end

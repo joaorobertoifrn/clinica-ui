@@ -9,23 +9,23 @@ type
     Femail: String;
     FregistroANS: String;
     FcodigoCNS: String;
-    Fid: String;
+    Fid: Integer;
     FrazaoSocial: String;
-    FperiodoRetorno: String;
+    FperiodoRetorno: Integer;
     Fnome: String;
     Ftelefone: String;
     procedure Setcnpj(const Value: String);
     procedure SetcodigoCNS(const Value: String);
     procedure Setemail(const Value: String);
-    procedure Setid(const Value: String);
+    procedure Setid(const Value: Integer);
     procedure Setnome(const Value: String);
     procedure Setparticular(const Value: String);
-    procedure SetperiodoRetorno(const Value: String);
+    procedure SetperiodoRetorno(const Value: Integer);
     procedure SetrazaoSocial(const Value: String);
     procedure SetregistroANS(const Value: String);
     procedure Settelefone(const Value: String);
   published
-    property id : String read Fid write Setid;
+    property id : Integer read Fid write Setid;
     property nome : String read Fnome write Setnome;
     property registroANS : String read FregistroANS write SetregistroANS;
     property razaoSocial : String read FrazaoSocial write SetrazaoSocial;
@@ -33,7 +33,7 @@ type
     property codigoCNS : String read FcodigoCNS write SetcodigoCNS;
     property telefone : String read Ftelefone write Settelefone;
     property email : String read Femail write Setemail;
-    property periodoRetorno : String read FperiodoRetorno write SetperiodoRetorno;
+    property periodoRetorno : Integer read FperiodoRetorno write SetperiodoRetorno;
     property particular : String read Fparticular write Setparticular;
 
   end;
@@ -69,7 +69,7 @@ begin
   Femail := Value;
 end;
 
-procedure TConvenio.Setid(const Value: String);
+procedure TConvenio.Setid(const Value: Integer);
 begin
   Fid := Value;
 end;
@@ -84,7 +84,7 @@ begin
   Fparticular := Value;
 end;
 
-procedure TConvenio.SetperiodoRetorno(const Value: String);
+procedure TConvenio.SetperiodoRetorno(const Value: Integer);
 begin
   FperiodoRetorno := Value;
 end;

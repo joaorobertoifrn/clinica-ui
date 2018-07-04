@@ -10,7 +10,7 @@ uses
   FireDAC.Comp.DataSet, FireDAC.Comp.Client, REST.Response.Adapter, REST.Client,
   Data.Bind.Components, Data.Bind.ObjectScope, System.Actions, Vcl.ActnList,
   System.ImageList, Vcl.ImgList, Vcl.Grids, Vcl.DBGrids, Vcl.StdCtrls,
-  Vcl.ComCtrls, Vcl.ExtCtrls;
+  Vcl.ComCtrls, Vcl.ExtCtrls, REST.Json, U_Convenio, System.Json, System.Json.Types;
 
 type
   TF_Convenio = class(TF_Padrao)
@@ -41,14 +41,16 @@ type
     RESTClientSalvar: TRESTClient;
     RESTRequestSalvar: TRESTRequest;
     RESTResponseSalvar: TRESTResponse;
-    RESTClientByID: TRESTClient;
-    RESTRequestByID: TRESTRequest;
-    RESTResponseByID: TRESTResponse;
     exec_Listar: TAction;
+    RESTClientFindByID: TRESTClient;
+    RESTRequestFindByID: TRESTRequest;
+    RESTResponseFindByID: TRESTResponse;
+    exec_FindByID: TAction;
     procedure DBGrid1DblClick(Sender: TObject);
     procedure FormShow(Sender: TObject);
     procedure exec_ListarExecute(Sender: TObject);
   private
+    procedure CarregaValores(convenio: TConvenio);
     { Private declarations }
   public
     { Public declarations }
@@ -63,26 +65,47 @@ implementation
 
 procedure TF_Convenio.DBGrid1DblClick(Sender: TObject);
 var
-  json : TStringList;
-
+  convenio : TConvenio;
 begin
   inherited;
   // Pega o registro e envia para tela de cadastro.
-  json := TStringList.Create;
 
-  RESTRequestByID.Params[0].Value := DBGrid1.Columns.Items[0].Field.Text;
-  RESTRequestByID.Execute;
+  try
+    try
+      RESTRequestFindByID.Params.ParameterByName('id_convenio').Value := DBGrid1.Columns.Items[0].Field.Text;
+      RESTRequestFindByID.Execute;
 
-  //edt_id.Text := Re
+      convenio := TConvenio.Create;
+      convenio := TJSON.JsonToObject<TConvenio>(RESTResponseFindByID.Content.Trim);
+    except on E: Exception do
+      ShowMessage(E.Message);
+    end;
 
-  PageControl1.TabIndex := 1;
+    CarregaValores(convenio);
+    PageControl1.TabIndex := 1;
 
+  finally
+    FreeAndNil(convenio);
+  end;
 end;
 
 procedure TF_Convenio.exec_ListarExecute(Sender: TObject);
 begin
   inherited;
   RESTRequestListar.Execute;
+end;
+
+procedure TF_Convenio.CarregaValores(convenio: TConvenio);
+begin
+  edt_id.Text := IntToStr(convenio.id);
+  edt_nome.Text := convenio.nome;
+  edt_email.Text := convenio.email;
+  edt_cnpj.Text := convenio.cnpj;
+  edt_razaoSocial.Text := convenio.razaoSocial;
+  edt_registroANS.Text := convenio.registroANS;
+  edt_codigoCNS.Text := convenio.codigoCNS;
+  edt_telefone.Text := convenio.telefone;
+  edt_periodoRetorno.Text := IntToStr(convenio.periodoRetorno);
 end;
 
 procedure TF_Convenio.FormShow(Sender: TObject);
