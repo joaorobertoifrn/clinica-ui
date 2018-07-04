@@ -51,6 +51,7 @@ type
     procedure act_CadPacienteExecute(Sender: TObject);
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure FormCreate(Sender: TObject);
+    procedure act_CadConvenioExecute(Sender: TObject);
   private
     { Private declarations }
   public
@@ -65,7 +66,17 @@ implementation
 
 {$R *.dfm}
 
-uses frm_Sobre, frm_Sair, frm_Paciente, frm_Login ;
+uses frm_Sobre, frm_Sair, frm_Paciente, frm_Login , frm_Convenio;
+
+procedure TF_Principal.act_CadConvenioExecute(Sender: TObject);
+begin
+  F_Convenio := TF_Convenio.Create(Application);
+  try
+    F_Convenio.ShowModal;
+  finally
+    FreeAndNil(F_Convenio);
+  end;
+end;
 
 procedure TF_Principal.act_CadPacienteExecute(Sender: TObject);
 begin

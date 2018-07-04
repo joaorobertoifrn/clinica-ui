@@ -11,7 +11,10 @@ uses
   frm_Padrao in 'frm_Padrao.pas' {F_Padrao},
   frm_Paciente in 'frm_Paciente.pas' {F_Paciente},
   frm_Login in 'frm_Login.pas' {F_Login},
-  U_Autenticacao in 'U_Autenticacao.pas';
+  U_Autenticacao in 'U_Autenticacao.pas',
+  frm_Convenio in 'frm_Convenio.pas' {F_Convenio},
+  U_Convenio in 'U_Convenio.pas',
+  U_Paciente in 'U_Paciente.pas';
 
 {$R *.res}
 
@@ -23,5 +26,6 @@ begin
   Application.CreateForm(TF_Principal, F_Principal);
   Application.CreateForm(TBancoDados, BancoDados);
   Application.CreateForm(TF_Padrao, F_Padrao);
+  Application.CreateForm(TF_Convenio, F_Convenio);
   Application.Run;
 end.

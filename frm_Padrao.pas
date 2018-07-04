@@ -25,6 +25,7 @@ type
     edt_Pesquisar: TEdit;
     btn_Pesquisar: TButton;
     btn_Sair: TButton;
+    btn_salvar: TButton;
   private
     { Private declarations }
   public

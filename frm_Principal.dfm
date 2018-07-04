@@ -12,7 +12,7 @@ object F_Principal: TF_Principal
   Font.Style = []
   Menu = MainMenu1
   OldCreateOrder = False
-  Position = poScreenCenter
+  Position = poMainFormCenter
   WindowState = wsMaximized
   OnClose = FormClose
   OnCreate = FormCreate
@@ -27080,6 +27080,8 @@ object F_Principal: TF_Principal
     object act_CadConvenio: TAction
       Category = 'Cadastro'
       Caption = 'Convenio'
+      ImageIndex = 2
+      OnExecute = act_CadConvenioExecute
     end
     object act_Sair: TAction
       Category = 'Sistema'
@@ -27135,7 +27137,7 @@ object F_Principal: TF_Principal
     Left = 88
     Top = 176
     Bitmap = {
-      494C010107003000480020002000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C010107003000500020002000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000800000004000000001002000000000000080
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000020000

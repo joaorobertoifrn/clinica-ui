@@ -12,7 +12,7 @@ object F_Login: TF_Login
   Font.Name = 'Tahoma'
   Font.Style = []
   OldCreateOrder = False
-  Position = poScreenCenter
+  Position = poMainFormCenter
   PixelsPerInch = 96
   TextHeight = 13
   object Label1: TLabel
@@ -66,7 +66,7 @@ object F_Login: TF_Login
   object RESTClient1: TRESTClient
     Accept = 'application/json, text/plain; q=0.9, text/html;q=0.8,'
     AcceptCharset = 'UTF-8, *;q=0.8'
-    BaseURL = 'http://localhost:8080/login'
+    BaseURL = 'https://clinicaifrn.herokuapp.com/login'
     ContentType = 'application/json'
     Params = <
       item
