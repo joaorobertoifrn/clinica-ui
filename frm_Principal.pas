@@ -119,7 +119,6 @@ begin
   F_Login := TF_Login.Create(Application);
   try
     F_Login.ShowModal;
-    ShowMessage(Auth.token);
   finally
     F_Login.Free;
   end;
