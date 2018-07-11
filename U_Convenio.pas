@@ -5,7 +5,7 @@ type
   TConvenio = class
   private
     Fcnpj: String;
-    Fparticular: String;
+    Fparticular: Boolean;
     Femail: String;
     FregistroANS: String;
     FcodigoCNS: String;
@@ -19,7 +19,7 @@ type
     procedure Setemail(const Value: String);
     procedure Setid(const Value: Integer);
     procedure Setnome(const Value: String);
-    procedure Setparticular(const Value: String);
+    procedure Setparticular(const Value: Boolean);
     procedure SetperiodoRetorno(const Value: Integer);
     procedure SetrazaoSocial(const Value: String);
     procedure SetregistroANS(const Value: String);
@@ -34,7 +34,7 @@ type
     property telefone : String read Ftelefone write Settelefone;
     property email : String read Femail write Setemail;
     property periodoRetorno : Integer read FperiodoRetorno write SetperiodoRetorno;
-    property particular : String read Fparticular write Setparticular;
+    property particular : Boolean read Fparticular write Setparticular;
 
   end;
 
@@ -79,7 +79,7 @@ begin
   Fnome := Value;
 end;
 
-procedure TConvenio.Setparticular(const Value: String);
+procedure TConvenio.Setparticular(const Value: Boolean);
 begin
   Fparticular := Value;
 end;

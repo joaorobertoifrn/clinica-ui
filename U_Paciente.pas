@@ -1,6 +1,7 @@
 unit U_Paciente;
 
 interface
+
   type
     TPaciente = class
 

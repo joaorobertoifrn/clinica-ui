@@ -1,6 +1,8 @@
 inherited F_Convenio: TF_Convenio
   Caption = 'Conv'#234'nio'
   OnShow = FormShow
+  ExplicitWidth = 641
+  ExplicitHeight = 476
   PixelsPerInch = 96
   TextHeight = 13
   inherited Panel1: TPanel
@@ -8,8 +10,11 @@ inherited F_Convenio: TF_Convenio
   end
   inherited Panel2: TPanel
     inherited PageControl1: TPageControl
-      ActivePage = Tab_Pesquisa
       inherited Tab_Pesquisa: TTabSheet
+        ExplicitLeft = 4
+        ExplicitTop = 24
+        ExplicitWidth = 625
+        ExplicitHeight = 335
         inherited Panel5: TPanel
           inherited DBGrid1: TDBGrid
             Options = [dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgConfirmDelete, dgCancelOnExit, dgTitleClick, dgTitleHotTrack]
@@ -22,46 +27,45 @@ inherited F_Convenio: TF_Convenio
         ExplicitTop = 24
         ExplicitWidth = 625
         ExplicitHeight = 335
-        object edt_id: TLabeledEdit [0]
-          Left = 24
-          Top = 61
+        object edt_periodoRetorno: TLabeledEdit [0]
+          Left = 482
+          Top = 208
           Width = 121
           Height = 21
-          EditLabel.Width = 11
+          EditLabel.Width = 93
           EditLabel.Height = 13
-          EditLabel.Caption = 'ID'
-          TabOrder = 0
+          EditLabel.Caption = 'Per'#237'odo do Retorno'
+          TabOrder = 8
         end
-        object edt_nome: TLabeledEdit [1]
-          Left = 24
-          Top = 109
-          Width = 313
-          Height = 21
-          AutoSize = False
-          EditLabel.Width = 27
-          EditLabel.Height = 13
-          EditLabel.Caption = 'Nome'
-          TabOrder = 1
-        end
-        object edt_email: TLabeledEdit [2]
-          Left = 352
-          Top = 109
-          Width = 251
-          Height = 21
-          EditLabel.Width = 24
-          EditLabel.Height = 13
-          EditLabel.Caption = 'Email'
-          TabOrder = 2
-        end
-        object edt_cnpj: TLabeledEdit [3]
-          Left = 24
-          Top = 160
+        object edt_telefone: TLabeledEdit [1]
+          Left = 320
+          Top = 208
           Width = 137
           Height = 21
-          EditLabel.Width = 25
+          EditLabel.Width = 42
           EditLabel.Height = 13
-          EditLabel.Caption = 'CNPJ'
-          TabOrder = 3
+          EditLabel.Caption = 'Telefone'
+          TabOrder = 7
+        end
+        object edt_codigoCNS: TLabeledEdit [2]
+          Left = 176
+          Top = 208
+          Width = 121
+          Height = 21
+          EditLabel.Width = 56
+          EditLabel.Height = 13
+          EditLabel.Caption = 'C'#243'digo CNS'
+          TabOrder = 6
+        end
+        object edt_registroANS: TLabeledEdit [3]
+          Left = 24
+          Top = 208
+          Width = 137
+          Height = 21
+          EditLabel.Width = 63
+          EditLabel.Height = 13
+          EditLabel.Caption = 'Registro ANS'
+          TabOrder = 5
         end
         object edt_razaoSocial: TLabeledEdit [4]
           Left = 176
@@ -73,45 +77,46 @@ inherited F_Convenio: TF_Convenio
           EditLabel.Caption = 'Raz'#227'o Social'
           TabOrder = 4
         end
-        object edt_registroANS: TLabeledEdit [5]
+        object edt_cnpj: TLabeledEdit [5]
           Left = 24
-          Top = 208
+          Top = 160
           Width = 137
           Height = 21
-          EditLabel.Width = 63
+          EditLabel.Width = 25
           EditLabel.Height = 13
-          EditLabel.Caption = 'Registro ANS'
-          TabOrder = 5
+          EditLabel.Caption = 'CNPJ'
+          TabOrder = 3
         end
-        object edt_codigoCNS: TLabeledEdit [6]
-          Left = 176
-          Top = 208
+        object edt_email: TLabeledEdit [6]
+          Left = 352
+          Top = 109
+          Width = 251
+          Height = 21
+          EditLabel.Width = 24
+          EditLabel.Height = 13
+          EditLabel.Caption = 'Email'
+          TabOrder = 2
+        end
+        object edt_nome: TLabeledEdit [7]
+          Left = 24
+          Top = 109
+          Width = 313
+          Height = 21
+          AutoSize = False
+          EditLabel.Width = 27
+          EditLabel.Height = 13
+          EditLabel.Caption = 'Nome'
+          TabOrder = 1
+        end
+        object edt_id: TLabeledEdit [8]
+          Left = 24
+          Top = 61
           Width = 121
           Height = 21
-          EditLabel.Width = 56
+          EditLabel.Width = 11
           EditLabel.Height = 13
-          EditLabel.Caption = 'C'#243'digo CNS'
-          TabOrder = 6
-        end
-        object edt_telefone: TLabeledEdit [7]
-          Left = 320
-          Top = 208
-          Width = 137
-          Height = 21
-          EditLabel.Width = 42
-          EditLabel.Height = 13
-          EditLabel.Caption = 'Telefone'
-          TabOrder = 7
-        end
-        object edt_periodoRetorno: TLabeledEdit [8]
-          Left = 482
-          Top = 208
-          Width = 121
-          Height = 21
-          EditLabel.Width = 93
-          EditLabel.Height = 13
-          EditLabel.Caption = 'Per'#237'odo do Retorno'
-          TabOrder = 8
+          EditLabel.Caption = 'ID'
+          TabOrder = 0
         end
         inherited btn_salvar: TButton
           TabOrder = 9
@@ -314,6 +319,8 @@ inherited F_Convenio: TF_Convenio
     Top = 240
   end
   object RESTResponseFindByID: TRESTResponse
+    ContentType = 'application/json'
+    ContentEncoding = 'charset=UTF-8'
     Left = 288
     Top = 240
   end

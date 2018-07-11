@@ -10,7 +10,7 @@ uses
   FireDAC.Comp.DataSet, FireDAC.Comp.Client, REST.Response.Adapter, REST.Client,
   Data.Bind.Components, Data.Bind.ObjectScope, System.Actions, Vcl.ActnList,
   System.ImageList, Vcl.ImgList, Vcl.Grids, Vcl.DBGrids, Vcl.StdCtrls,
-  Vcl.ComCtrls, Vcl.ExtCtrls, REST.Json, U_Convenio, System.Json, System.Json.Types;
+  Vcl.ComCtrls, Vcl.ExtCtrls, REST.Json, REST.Json.Types, U_Convenio, System.Json, System.Json.Types;
 
 type
   TF_Convenio = class(TF_Padrao)

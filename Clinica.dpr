@@ -14,7 +14,8 @@ uses
   U_Autenticacao in 'U_Autenticacao.pas',
   frm_Convenio in 'frm_Convenio.pas' {F_Convenio},
   U_Convenio in 'U_Convenio.pas',
-  U_Paciente in 'U_Paciente.pas';
+  U_Paciente in 'U_Paciente.pas',
+  U_Requisicao in 'U_Requisicao.pas';
 
 {$R *.res}
 
